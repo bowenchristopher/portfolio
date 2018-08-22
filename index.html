@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bowen Christopher</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <style>
+  a {
+    color: #000000;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  h2 {
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Open Sans', sans-serif;
+  }
+  body, html {
+  margin: 0;
+  overflow: hidden;
+  color: #566472;
+  }
+  .title{
+    font-family: 'Hind', sans-serif;
+    color: #2d3e4f;
+    font-weight: 400;
+    bottom: 0;
+  }
+
+    #left {
+    height:100%;
+    position: absolute;
+    top: 0px;
+    bottom: 0;
+    width: 90%;
+    overflow-y: scroll; 
+    }
+    .col-md-6-right {
+        -ms-flex: 0 0 50%;
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+    p{
+        font-family: 'Open Sans', sans-serif;
+    }
+  </style>
+   <script>
+        var TxtType = function(el, toRotate, period) {
+               this.toRotate = toRotate;
+               this.el = el;
+               this.loopNum = 0;
+               this.period = parseInt(period, 10) || 2000;
+               this.txt = '';
+               this.tick();
+               this.isDeleting = false;
+           };
+       
+           TxtType.prototype.tick = function() {
+               var i = this.loopNum % this.toRotate.length;
+               var fullTxt = this.toRotate[i];
+       
+               if (this.isDeleting) {
+               this.txt = fullTxt.substring(0, this.txt.length - 1);
+               } else {
+               this.txt = fullTxt.substring(0, this.txt.length + 1);
+               }
+       
+               this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+       
+               var that = this;
+               var delta = 200 - Math.random() * 100;
+       
+               if (this.isDeleting) { delta /= 2; }
+       
+               if (!this.isDeleting && this.txt === fullTxt) {
+               delta = this.period;
+               this.isDeleting = true;
+               } else if (this.isDeleting && this.txt === '') {
+               this.isDeleting = false;
+               this.loopNum++;
+               delta = 500;
+               }
+       
+               setTimeout(function() {
+               that.tick();
+               }, delta);
+           };
+       
+           window.onload = function() {
+               var elements = document.getElementsByClassName('typewrite');
+               for (var i=0; i<elements.length; i++) {
+                   var toRotate = elements[i].getAttribute('data-type');
+                   var period = elements[i].getAttribute('data-period');
+                   if (toRotate) {
+                     new TxtType(elements[i], JSON.parse(toRotate), period);
+                   }
+               }
+               // INJECT CSS
+               var css = document.createElement("style");
+               css.type = "text/css";
+               css.innerHTML = ".typewrite > .wrap { border-right: 0.08em solid #fff}";
+               document.body.appendChild(css);
+           };
+    </script>
+</head>
+
+<body>
+<!-- Logo -->
+
+<!-- Links
+     - Work
+     - Resume
+-->
+<!-- Content 
+     - Hello 
+     - 
+style="background-color: whitesmoke;"
+-->
+
+<div class="row">
+    <div class="col-md-6 col-12 text-center" style="background-color: #fbfbfb;">
+        <div style="margin-top: 30%; margin-bottom: 40%;">
+            <img src="bike_test_3.svg" style="height: 9rem" label="Bowen Christopher">
+            <h1 class="title" style=" margin-bottom: 1rem;">Hey, I am </span>Bowen, </span> </h1>
+            <h2>
+<span class="typewrite" data-period="2000" style="font-weight: 300;" data-type='[ "a Software Developer","an Inventor", "an Avid Cyclist", " a Maker"]'>
+            <span class="wrap"></span>
+            </span>
+            <br>
+            <span style="font-weight: 300;"> living in Vermont </span>
+            </h2> 
+        </div>
+    </div>
+    <div class="col-md-6 col-12" style="margin-top: 3rem;">
+        <div id="left">
+            <div class ="row">
+                <div class="col-md-2 title">
+                    ABOUT
+                </div>
+                <div class="col-md-10">
+                    <p>
+                        I'm currently a software developer focusing on machine learning and Python based applications although I am proficient with a variety of web development frameworks. At the moment I am open to new projects or opportunities.I will be graduating from Northern Vermont University in the fall and will be attending grad school the following year. 
+                    </p>
+                    <p>
+                        As a software engineer, I enjoy bridging the gap between engineering and design — combining my technical knowledge with my keen eye for design to create a beautiful product. My goal is to always build applications that are scalable and efficient under the hood while providing engaging, pixel-perfect user experiences.
+                    </p>   
+                    <p>
+                        When I'm not in front of a computer screen, I'm probably snowboarding, cruising around on my penny board, or crossing off another item on my bucket list.
+                    </p>
+                    <p>
+                        I train on a red Jamis
+                        I can help you build your next product.
+                        I design, build, operate & sometimes rescue full-stack web applications.
+                        
+                        Have a project you'd like to discuss?
+                        
+                        Let's chat
+                    </p>
+                    </div>
+                <div class="col-md-2 title">
+                    LANGUAGES
+                </div>
+                <div class="col-md-10">
+                    <br>
+                    <ul class="list-unstyled"> 
+                        <li>Python</li>
+                        <li>TypeScript</li> 
+                        <li>SQL</li> 
+                        <li>C#</li> 
+                        <li>PHP</li> 
+                        <li>C++</li> 
+                        <li>JavaScript (ES6)</li> 
+                    </ul>
+                </div>
+                <div class="col-md-2 title">
+                    FRAMEWORKS
+                </div>
+                <div class="col-md-10">
+                    <br>
+                    <ul class="list-unstyled">  
+                        <li>Flask</li> 
+                        <li>Angular2</li> 
+                        <li>React</li> 
+                        <li>Node</li> 
+                        <li>Bootstraps</li> 
+                        <li>TensorFlow</li> 
+                        <li>Laravel</li> 
+                    </ul>
+                </div>
+                <div class="col-md-2 title">
+                    DESIGN
+                </div>
+                <div class="col-md-10">
+                    <br>
+                    <ul class="list-unstyled"> 
+                        <li>Adobe Illustrator</li> 
+                        <li>Autodesk 360</li> 
+                        <li>Adobe Photoshop</li> 
+                        <li>CSS/Sass</li> 
+                        <li>Wire Framing</li> 
+                        <li>Content Managment</li> 
+                        <li>Sketch</li> 
+                    </ul> 
+                </div>   
+                <div class="col-md-2 title">
+                    MISC
+                </div>
+                <div class="col-md-10">    
+                    <br>
+                    <ul class="list-unstyled">  
+                        <li>Git & Github</li> 
+                        <li>TypeScript</li> 
+                        <li>HTML</li> 
+                        <li>CSS/Sass</li> 
+                        <li>R</li> 
+                        <li>Linux/Windows</li> 
+                    </ul>  
+                </div>
+                <div class="col-md-2 title">
+                    PATENTS
+                </div>
+                <div class="col-md-10">
+                        <br>
+                    <ul class="list-unstyled"> 
+                        <li> Formulation and Display of Product Representations </li>
+                        <li>Display board for multimedia devices</li>
+                        <li> Portable display board for multimedia devices</li>
+                        <li> Display board with apertures, receptacle, and support for multimedia electronics devices</li>
+                    </ul>
+                </div>
+                <div class="col-md-2 title">
+                    EXPERIENCE
+                </div>
+                <div class="col-md-10">
+                    <h5> View my Resume </h5>
+                </div>
+                <div class="col-md-2 title">
+                    PROJECTS 
+                </div>
+                <div class="col-md-10">
+                    <p>
+                        I can help you build your next product.
+                        I design, build, operate & sometimes rescue full-stack web applications.
+                        
+                        Have a project you'd like to discuss?
+                        
+                        Let's chat
+                    </p>
+                </div>
+                <div class="col-md-2 title">
+                    CONNECT
+                </div>
+                <div class="col-md-10">
+
+                </div>   
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

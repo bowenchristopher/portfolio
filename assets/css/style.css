@@ -48,7 +48,7 @@ overflow-y: scroll;
  
 /* Handle */
 ::-webkit-scrollbar-thumb {
-    background: #888; 
+    background: #2d3e4f; 
 }
 
 /* Handle on hover */

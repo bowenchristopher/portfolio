@@ -27,7 +27,7 @@ height:100%;
 position: absolute;
 top: 0px;
 bottom: 0;
-width: 85%;
+width: 100%;
 overflow-y: scroll; 
 }
 ::selection {

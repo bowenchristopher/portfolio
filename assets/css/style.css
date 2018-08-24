@@ -28,10 +28,13 @@ p{
     font-family: 'Open Sans', sans-serif;
 }
 #left {
-    height:100%;
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    width: 90%;
-    overflow-y: scroll; 
-    }
+height:100%;
+position: absolute;
+top: 0px;
+bottom: 0;
+width: 90%;
+overflow-y: scroll; 
+}
+::selection {
+    background: #FFE74C;
+}

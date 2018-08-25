@@ -22,6 +22,10 @@ bottom: 0;
 p{
     font-family: 'Open Sans', sans-serif;
 }
+.highlight{
+    background: #FFE74C;
+}
+
 #left {
 height:100%;
 position: absolute;

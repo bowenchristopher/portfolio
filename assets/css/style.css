@@ -19,19 +19,39 @@ color: #2d3e4f;
 font-weight: 400;
 bottom: 0;
 }
-.col-md-6-right {
-    -ms-flex: 0 0 50%;
-    flex: 0 0 50%;
-    max-width: 50%;
-}
 p{
     font-family: 'Open Sans', sans-serif;
 }
 #left {
-    height:100%;
-    position: absolute;
-    top: 0px;
-    bottom: 0;
-    width: 90%;
-    overflow-y: scroll; 
-    }
+height:100%;
+position: absolute;
+top: 0px;
+bottom: 0;
+width: 100%;
+overflow-y: scroll; 
+}
+
+/* Selection */
+::selection {
+    background: #FFE74C;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #fff; 
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #2d3e4f; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
+}

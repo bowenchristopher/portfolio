@@ -25,6 +25,9 @@ p{
 .highlight{
     background: #FFE74C;
 }
+.right_highlight{
+    color: #35A7FF;
+}
 
 #left {
 height:100%;
